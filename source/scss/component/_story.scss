@@ -5,7 +5,6 @@
     &__thumb {
         overflow: hidden;
         position: relative;
-        text-align: center;
         & + .story__header {
             margin-top: 7px;
         }
@@ -36,6 +35,7 @@
     }
     &__status {
         position: absolute;
+        text-align: center;
         bottom: 8px;
         left: 8px;
         .fa-play {

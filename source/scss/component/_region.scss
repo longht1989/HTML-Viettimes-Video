@@ -6,7 +6,6 @@
 /* zone global style */
 
 .zone {
-    margin-bottom: 20px;
     &__header {
         margin-bottom: 10px;
         @include clearfix;
@@ -44,14 +43,10 @@
             padding: 10px;
         }
     }
-    &--small {
-        .zone__title {
-            padding: 9px 0 0px;
-            @include font-size(18, 25);
-            &::after {
-                height: 4px;
-            }
-        }
+    & + .zone {
+        margin-top: 15px;
+        padding-top: 20px;
+        border-top: 1px solid #EEEEEE;
     }
 }
 
