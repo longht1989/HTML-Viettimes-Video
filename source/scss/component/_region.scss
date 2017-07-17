@@ -1,0 +1,65 @@
+/* ====================================
+   All region in project
+   ==================================== */
+
+
+/* zone global style */
+
+.zone {
+    margin-bottom: 20px;
+    &__header {
+        margin-bottom: 10px;
+        @include clearfix;
+    }
+    &__title {
+        font-size: 18px;
+        line-height: 3.2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        float: left;
+    }
+    &__navbar {
+        float: right;
+        .btn {
+            border: none;
+            background: #E5E5E5;
+            width: 32px;
+            height: 32px;
+            color: white;
+            text-align: center;
+            &:hover {
+                background: $brand-primary;
+            }
+            &+.btn {
+                margin-left: 10px;
+            }
+        }
+    }
+    &__content {
+        @include clearfix();
+    }
+    &--special {
+        .zone__content {
+            background: #F9EFD6;
+            padding: 10px;
+        }
+    }
+    &--small {
+        .zone__title {
+            padding: 9px 0 0px;
+            @include font-size(18, 25);
+            &::after {
+                height: 4px;
+            }
+        }
+    }
+}
+
+
+/* ads */
+
+.qc {
+    @include clearfix();
+    margin-bottom: 20px;
+    text-align: center;
+}

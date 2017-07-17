@@ -1,0 +1,99 @@
+/* style for story */
+
+.story {
+    @include clearfix;
+    &__thumb {
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        & + .story__header {
+            margin-top: 7px;
+        }
+        img {
+            @include transition(all, 0.2, linear);
+        }
+        a::after {
+            @include transition(all, 0.2, linear);
+            opacity: 0;
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: black;
+        }
+    }
+    &__title {
+        font-size: 14px;
+        line-height: 19px;
+        font-family: $font-family-serif;
+        font-weight: bold;
+        & + .story__meta {
+            margin-top: 7px;
+        }
+    }
+    &__status {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        .fa-play {
+            width: 24px;
+            height: 24px;
+            font-size: 10px;
+            line-height: 22px;
+            border: 1px solid #fff;
+            color: white;
+            background: rgba(0, 0, 0, .5);
+            border-radius: 2px;
+            @include transition(all, 0.2, linear);
+        }
+    }
+    &__cate {
+        font-weight: bold;
+        margin-right: 5px;
+        color: #999;
+        &:hover {
+            color: $brand-primary;
+        }
+    }
+    &__meta {
+        color: #999;
+        font-size: 12px;
+    }
+    &:hover,
+    &--active {
+        .story__thumb {
+            img {
+                filter: blur(1px);
+            }
+            a::after {
+                opacity: .3;
+            }
+        }
+        .story__status {
+            .fa-play {
+                background: $brand-primary;
+                border-color: $brand-primary;
+            }
+        }
+    }
+    &--active {
+        .story__thumb {
+            img {
+                filter: blur(2 px);
+            }
+        }
+        .story__status {
+            &::after {
+                content: "Đang chạy...";
+                display: inline;
+                margin-left: 5px;
+                font-size: 11px;
+                color: white;
+                font-weight: normal;
+            }
+        }
+    }
+}

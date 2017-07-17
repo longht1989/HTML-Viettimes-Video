@@ -1,0 +1,26 @@
+/* ====================================
+   Customize Pagination
+   ==================================== */
+
+.pagination {
+    margin-top: 0;
+    @include clearfix;
+    display: block;
+    li {
+        display: inline-block;
+        > a {
+            color: white;
+            margin-left: 10px;
+            background-color: #aaaaaa;
+            border: none;
+            @include transition(all, 0.2, ease-out);
+        }
+        &.active,
+        &:hover {
+            >a {
+                color: white;
+                background: linear-gradient(to right, $brand-danger, $brand-primary);
+            }
+        }
+    }
+}

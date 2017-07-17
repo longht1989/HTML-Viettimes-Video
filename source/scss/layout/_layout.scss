@@ -1,0 +1,163 @@
+#site-content {
+    @include clearfix;
+    margin-bottom: 30px;
+}
+
+.site-wrap {
+    padding: 0;
+    width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    @include clearfix();
+    @include breakpoint(1024px, 1159px) {
+        width: 1000px;
+    }
+}
+
+.main-col {
+    width: 840px;
+    float: left;
+    @include breakpoint(1024px, 1159px) {
+        width: 680px;
+    }
+}
+
+.sidebar-col {
+    width: 300px;
+    float: right;
+    @include breakpoint(md) {}
+}
+
+.content-col {
+    width: 620px;
+    float: left;
+    @include breakpoint(1024px, 1159px) {
+        width: 510px;
+    }
+}
+
+.aside-col {
+    width: 200px;
+    float: right;
+    .sticky-wrap.fixed {
+        width: 200px;
+        position: fixed;
+    }
+    @include breakpoint(1024px, 1159px) {
+        width: 150px;
+        .sticky-wrap.fixed {
+            width: 150px;
+        }
+    }
+}
+
+.zone--highlight {
+    @include clearfix;
+    .story--highlight {
+        float: right;
+        width: 620px;
+        @include breakpoint(1024px, 1159px) {
+            width: 460px;
+        }
+    }
+    .latest-listing {
+        width: 200px;
+        float: left;
+    }
+    @include breakpoint(md) {}
+}
+
+.zone-listing {
+    @include breakpoint(md) {}
+}
+
+.two-cols {
+    margin-left: -10px;
+    @include clearfix;
+    & > * {
+        width: 50%;
+        float: left;
+        padding: 0 10px;
+    }
+}
+
+.four-cols {
+    margin-right: -10px;
+    @include clearfix;
+    & > * {
+        width: 25%;
+        float: left;
+        padding: 0 10px;
+    }
+}
+
+
+/* area style */
+
+.area {
+    @include clearfix;
+    margin-bottom: 20px;
+    .zone {
+        margin-bottom: 0;
+    }
+    &--grey {
+        background: #f2f2f2;
+        .story-listing {
+            @include clearfix;
+            font-size: 0;
+            margin: 0 -5px;
+            li {
+                display: inline-block;
+                width: 50%;
+                vertical-align: top;
+                padding: 0 5px;
+            }
+        }
+        @include breakpoint(md) {
+            .story--featured {
+                padding-bottom: 0;
+                border-bottom: none;
+                width: 330px;
+                float: left;
+            }
+            .story-listing {
+                width: 670px;
+                float: right;
+                margin-left: -10px;
+                margin-right: -10px;
+                li {
+                    padding: 0 10px;
+                    width: 33.33%;
+                }
+            }
+        }
+    }
+    &--special {
+        @extend .area--grey;
+        background: url(../img/special-are-bg.png) left top no-repeat;
+        background-size: cover;
+        .zone__title {
+            background: none;
+        }
+    }
+}
+
+.category {
+    &__highlight {
+        margin-bottom: 20px;
+    }
+    &__top-story {
+        font-size: 0;
+        @include clearfix;
+        margin: 0 -5px;
+        .story {
+            width: 33.33%;
+            display: inline-block;
+            padding: 0 5px;
+            vertical-align: top;
+        }
+    }
+    &__listing {
+        margin-bottom: 20px;
+    }
+}

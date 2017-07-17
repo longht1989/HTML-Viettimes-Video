@@ -1,0 +1,209 @@
+/* ====================================   Header's style   ==================================== */
+
+#m-site-header {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, .14);
+    margin-bottom: 20px;
+    .site-wrap {
+        position: relative;
+    }
+    .logo {
+        width: 110px;
+    }
+    .fa-navicon {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        font-size: 24px;
+        color: #555;
+        @include transition(all, 0.2, ease);
+        &.is-active {
+            color: $brand-primary;
+            background: #f0f0f0;
+            padding: 18px 10px;
+            top: -10px;
+            right: 0px;
+        }
+    }
+    @include breakpoint(md) {
+        display: none;
+    }
+}
+
+.mobile {
+    &__menu {
+        background: #f0f0f0;
+        margin: -20px 0 20px;
+        padding: 10px;
+        display: none;
+    }
+    &__search {
+        position: relative;
+        margin-bottom: 10px;
+        .fa-search {
+            position: absolute;
+            right: 2px;
+            top: 0px;
+            padding: 8px;
+            font-size: 18px;
+            @include transition(all, 0.2, ease);
+            @include haf {
+                color: $brand-primary;
+            }
+        }
+    }
+    &__cate-listing {
+        li {
+            font-family: $font-family-special, arial, sans-serif;
+            @include font-size(18, 22);
+            margin: 7px 0;
+            a {
+                &::before {
+                    content: '•';
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+                display: block;
+                @extend .link-primary;
+            }
+        }
+    }
+}
+
+#site-header {
+    @include clearfix();
+    margin-bottom: 30px;
+    z-index: 10;
+    position: relative;
+    @include breakpoint(md) {}
+}
+
+.site-header {
+    &__topbar {
+        @include clearfix();
+        padding: 0 10px;
+        background-color: #f0f0f0;
+        @include font-size(12, 35);
+        z-index: 5;
+        time {
+            float: left;
+        }
+    }
+    &__search {
+        float: right;
+        position: relative;
+        width: 100%;
+        .form-control {
+            height: 25px;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+        span {
+            cursor: pointer;
+            position: absolute;
+            right: 4px;
+            top: 9px;
+            font-size: 16px;
+            @include transition(all, 0.2, ease);
+            @include haf {
+                color: $brand-primary;
+            }
+        }
+    }
+    &__content {
+        // text-align: center;
+        background: url(../img/hdr-bg.png) center top no-repeat;
+        padding: 20px 0;
+        .logo {
+            width: 310px;
+            display: inline-block;
+        }
+    }
+    &__nav {
+        background: linear-gradient(to bottom, $brand-danger, $brand-primary);
+    }
+}
+
+.navigator {
+    @include clearfix();
+    @include font-size(16, 45);
+    > li {
+        float: left;
+        position: relative;
+        margin-right: 1px;
+        a {
+            display: block;
+            padding: 0 10px;
+            background: transparent;
+            @include transition(all, 0.2, ease);
+            color: black;
+            &:hover {
+                background: #eee;
+                background: linear-gradient(to bottom, #eee, #dedede);
+                color: $brand-primary;
+            }
+        }
+        &:hover {
+            .navigator__child {
+                left: auto;
+            }
+            .navigator__search {
+                right: 0;
+            }
+        }
+        &.is-active {
+            a {
+                background: #eee;
+                background: linear-gradient(to bottom, #eee, #dedede);
+                color: $brand-primary;
+            }
+        }
+    }
+    &__child {
+        position: absolute;
+        top: 100%;
+        left: -999em;
+        width: 200px;
+        z-index: 2;
+        @include has-shadow();
+        >li {
+            a {
+                background: #eee;
+                color: $brand-primary !important;
+                &:hover {
+                    background: #ddd;
+                }
+            }
+        }
+    }
+    &__search {
+        float: right !important;
+        > .fa {
+            padding: 0 15px;
+            @include transition(all, 0.2, ease);
+            cursor: pointer;
+        }
+        .fa-close {
+            padding: 0 16px;
+        }
+        .navigator__child {
+            width: 300px;
+            padding: 10px 15px;
+            background: #eee;
+            display: none;
+        }
+        &:hover,
+        &.is-active {
+            > .fa {
+                background-color: #eee;
+                color: $brand-primary;
+                line-height: 45px;
+            }
+            .navigator__child {
+                left: initial !important;
+                right: 0;
+            }
+        }
+    }
+}
