@@ -115,9 +115,9 @@ $padding-xs-horizontal:     5px !default;
 $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        0px !default;
-$border-radius-large:       0px !default;
-$border-radius-small:       0px !default;
+$border-radius-base:        3px !default;
+$border-radius-large:       5px !default;
+$border-radius-small:       2px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    #fff !default;
@@ -206,11 +206,11 @@ $input-border:                   #ccc !default;
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
 // This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
-$input-border-radius:            0;
+$input-border-radius:            3px;
 //** Large `.form-control` border radius
-$input-border-radius-large:      0;
+$input-border-radius-large:      5px;
 //** Small `.form-control` border radius
-$input-border-radius-small:      0;
+$input-border-radius-small:      2px;
 
 //** Border color for inputs on focus
 $input-border-focus:             #66afe9 !default;

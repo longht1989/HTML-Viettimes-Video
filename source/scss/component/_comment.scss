@@ -18,9 +18,15 @@ li {
 .commentbox {
     width: 100%;
     padding: 0 0 8px;
-    margin: 0 0 8px 0;
-    display: none;
+    margin: 0;
+    // display: none;
     @include clearfix;
+    .user {
+        max-height: 75px;
+        overflow: auto;
+        padding: 8px;
+        background: #fafafa;
+    }
 }
 
 .commentbox header {
@@ -30,7 +36,7 @@ li {
 }
 
 .commentbox header h1 {
-    font-family: $font-family-itim;
+    font-family: $font-family-serif;
     @include font-size(24, 33);
     color: $brand-primary;
     margin-bottom: 7px;
@@ -170,8 +176,8 @@ li {
     }
     font-weight: normal !important;
     color: #555 !important;
-    @include haf(){
-    	color: white !important;
+    @include haf() {
+        color: white !important;
     }
 }
 
@@ -606,4 +612,71 @@ li {
 #modal-content>div>label {
     width: 50%;
     float: left
+}
+
+.comment {
+    &__wrap {
+        background: #f0f0f0;
+        padding: 10px;
+        margin-top: 15px;
+        .user {
+            .avatar {
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                border: 1px solid #ccc;
+                display: inline-block;
+                float: left;
+                position: relative;
+                .fa {
+                    font-size: 12px;
+                    color: #ccc;
+                    position: absolute;
+                    top: 5px;
+                    left: 7px;
+                }
+            }
+        }
+        .btn {
+            float: right;
+            margin-top: 10px;
+        }
+    }
+    &__header {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        .fa {
+            margin-right: 5px;
+        }
+    }
+    &__input {
+        @include clearfix;
+        margin-bottom: 10px;
+    }
+    .content {
+        font-size: 12px;
+        margin-left: 35px;
+        padding-top: 3px;
+    }
+    .name {
+        font-weight: bold;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+    .text {
+        font-family: $font-family-serif;
+        margin-bottom: 5px;
+    }
+    .tool {
+        a {
+            font-size: 12px;
+            color: #777;
+            display: inline-block;
+            margin-right: 10px;
+            .fa {
+                margin-right: 3px;
+            }
+        }
+    }
 }

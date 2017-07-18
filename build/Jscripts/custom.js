@@ -33,4 +33,12 @@ $(function() {
         $(this).siblings(".navigator__child").slideToggle('fast');
     });
     stickyads(".sidebar-col", ".aside-col", "#stickhead", ".sticky-wrap", 5);
+    $('#site-header .fa-bars').click(function() {
+        $('.navbar').slideToggle();
+        $(this).toggleClass("is-active");
+    });
+    $('#site-header .container > .fa-search').click(function() {
+        $(this).siblings('.search__wrap').slideToggle("fast");
+        $(this).toggleClass("is-active");
+    });
 });

@@ -1,147 +1,101 @@
 /* ====================================   Header's style   ==================================== */
 
-#m-site-header {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, .14);
+#site-header {
+    padding: 20px 0;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
     margin-bottom: 20px;
-    .site-wrap {
-        position: relative;
+    .navbar {
+        display: none;
+        margin-bottom: 0;
+        margin-top: 20px;
+        padding-top: 5px;
+        border-top: 1px solid #eee;
+        @include breakpoint(md) {
+            display: block;
+            margin-top: 0;
+            padding-top: 0;
+            border: none;
+            float: left;
+            margin-left: 12px;
+            padding-left: 12px;
+            border-left: 1px solid #eaeaea;
+        }
     }
     .logo {
         width: 110px;
+        float: left;
     }
-    .fa-navicon {
-        position: absolute;
-        right: 10px;
-        top: 8px;
-        font-size: 24px;
-        color: #555;
-        @include transition(all, 0.2, ease);
-        &.is-active {
-            color: $brand-primary;
-            background: #f0f0f0;
-            padding: 18px 10px;
-            top: -10px;
-            right: 0px;
-        }
-    }
-    @include breakpoint(md) {
-        display: none;
-    }
-}
-
-.mobile {
-    &__menu {
-        background: #f0f0f0;
-        margin: -20px 0 20px;
-        padding: 10px;
-        display: none;
-    }
-    &__search {
-        position: relative;
-        margin-bottom: 10px;
-        .fa-search {
-            position: absolute;
-            right: 2px;
-            top: 0px;
-            padding: 8px;
-            font-size: 18px;
-            @include transition(all, 0.2, ease);
-            @include haf {
-                color: $brand-primary;
-            }
-        }
-    }
-    &__cate-listing {
-        li {
-            font-family: $font-family-special, arial, sans-serif;
-            @include font-size(18, 22);
-            margin: 7px 0;
-            a {
-                &::before {
-                    content: '•';
-                    display: inline-block;
-                    margin-right: 10px;
-                }
-                display: block;
-                @extend .link-primary;
-            }
-        }
-    }
-}
-
-#site-header {
-    @include clearfix();
-    margin-bottom: 30px;
-    z-index: 10;
-    position: relative;
-    @include breakpoint(md) {}
-}
-
-.site-header {
-    &__topbar {
-        @include clearfix();
-        padding: 0 10px;
-        background-color: #f0f0f0;
-        @include font-size(12, 35);
-        z-index: 5;
-        time {
-            float: left;
-        }
-    }
-    &__search {
+    .fa-bars {
+        cursor: pointer;
         float: right;
-        position: relative;
-        width: 100%;
-        .form-control {
-            height: 25px;
-            margin-top: 5px;
-            font-size: 12px;
+        font-size: 18px;
+        line-height: 30px;
+        padding: 0 10px;
+        border-radius: 3px;
+        @include transition(all, 0.2, linear);
+        &:hover,
+        &:active,
+        &:focus {
+            background: #e5e5e5;
+            color: white;
         }
-        span {
-            cursor: pointer;
-            position: absolute;
-            right: 4px;
-            top: 9px;
-            font-size: 16px;
-            @include transition(all, 0.2, ease);
-            @include haf {
-                color: $brand-primary;
+        &.is-active {
+            // background: $brand-primary;
+            // color: white;
+            &::before {
+                content: "";
             }
         }
-    }
-    &__content {
-        // text-align: center;
-        background: url(../img/hdr-bg.png) center top no-repeat;
-        padding: 20px 0;
-        .logo {
-            width: 310px;
-            display: inline-block;
+        @include breakpoint(md) {
+            display: none;
         }
     }
-    &__nav {
-        background: linear-gradient(to bottom, $brand-danger, $brand-primary);
+    .container {
+        position: relative;
+        &>.fa-search {
+            display: none;
+            cursor: pointer;
+            @include breakpoint(md) {
+                display: block;
+                float: right;
+                font-size: 16px;
+                line-height: 34px;
+                padding: 0 10px;
+                border-radius: 3px;
+                @include transition(all, 0.2, linear);
+                &:hover,
+                &:active,
+                &:focus {
+                    background: #e5e5e5;
+                    color: white;
+                }
+                &.is-active {
+                    &::before {
+                        content: "";
+                    }
+                }
+            }
+        }
     }
 }
 
 .navigator {
     @include clearfix();
-    @include font-size(16, 45);
-    > li {
-        float: left;
+    font-size: 14px;
+    line-height: 34px;
+    >li {
         position: relative;
-        margin-right: 1px;
         a {
             display: block;
-            padding: 0 10px;
             background: transparent;
-            @include transition(all, 0.2, ease);
+            @include transition(all, 0.2, linear);
             color: black;
+            border-radius: 3px;
             &:hover {
-                background: #eee;
-                background: linear-gradient(to bottom, #eee, #dedede);
-                color: $brand-primary;
+                background: $brand-primary;
+                color: white;
+                padding-left: 9px;
             }
         }
         &:hover {
@@ -154,56 +108,55 @@
         }
         &.is-active {
             a {
-                background: #eee;
-                background: linear-gradient(to bottom, #eee, #dedede);
-                color: $brand-primary;
+                background: $brand-primary;
+                color: white;
+                padding-left: 9px;
             }
         }
-    }
-    &__child {
-        position: absolute;
-        top: 100%;
-        left: -999em;
-        width: 200px;
-        z-index: 2;
-        @include has-shadow();
-        >li {
+        .search__wrap {
+            display: block;
+            position: static;
+            margin: 0 0 5px;
+            padding: 10px;
+        }
+        @include breakpoint(md) {
+            float: left;
+            margin-right: 1px;
             a {
-                background: #eee;
-                color: $brand-primary !important;
+                padding: 0 9px;
                 &:hover {
-                    background: #ddd;
+                    padding-left: 9px;
                 }
             }
+            .search__wrap {
+                display: none;
+            }
         }
     }
-    &__search {
-        float: right !important;
-        > .fa {
-            padding: 0 15px;
-            @include transition(all, 0.2, ease);
-            cursor: pointer;
+}
+
+.search {
+    &__wrap {
+        display: none;
+        z-index: 10;
+        padding: 20px;
+        background: #eaeaea;
+        position: absolute;
+        top: 100%;
+        margin-top: 20px;
+        left: 10px;
+        right: 10px;
+        @include clearfix;
+        .form-control {
+            float: left;
+            display: inline-block;
+            width: calc(100% - 45px);
         }
-        .fa-close {
-            padding: 0 16px;
-        }
-        .navigator__child {
-            width: 300px;
-            padding: 10px 15px;
-            background: #eee;
-            display: none;
-        }
-        &:hover,
-        &.is-active {
-            > .fa {
-                background-color: #eee;
-                color: $brand-primary;
-                line-height: 45px;
-            }
-            .navigator__child {
-                left: initial !important;
-                right: 0;
-            }
+        .btn {
+            float: left;
+            margin-left: 5px;
+            height: 34px;
+            line-height: 20px;
         }
     }
 }

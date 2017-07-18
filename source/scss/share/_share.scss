@@ -1,12 +1,11 @@
 /* button border  */
 
 .btn {
-    font-size: 14px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    -ms-border-radius: 0px;
-    -o-border-radius: 0px;
-    border-radius: 0px;
+    font-size: 14px; // -webkit-border-radius: 0px;
+    // -moz-border-radius: 0px;
+    // -ms-border-radius: 0px;
+    // -o-border-radius: 0px;
+    // border-radius: 0px;
     @include transition(background-color, 0.2, ease-out);
     &:active:focus,
     &:focus:active {
@@ -29,12 +28,20 @@
 }
 
 .form-control {
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    -ms-border-radius: 0px;
-    -o-border-radius: 0px;
-    border-radius: 0px;
+    // -webkit-border-radius: 0px;
+    // -moz-border-radius: 0px;
+    // -ms-border-radius: 0px;
+    // -o-border-radius: 0px;
+    // border-radius: 0px;
     &:focus {
         border-color: darken($brand-primary, 15%);
+    }
+}
+
+.loading-more {
+    font-family: $font-family-serif;
+    font-size: 18px;
+    .fa {
+        margin-right: 3px;
     }
 }
