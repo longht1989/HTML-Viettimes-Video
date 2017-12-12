@@ -78,7 +78,7 @@
             font-size: 0;
             .story {
                 display: inline-block;
-                width: 33%;
+                width: 50%;
                 padding: 0 10px;
                 vertical-align: top;
                 &:nth-child(4),
@@ -90,7 +90,7 @@
         }
         @include breakpoint(md) {
             .story {
-                width: 16.66%;
+                width: 25%;
             }
         }
     }
@@ -139,5 +139,25 @@
                 width: 25%;
             }
         }
+    }
+}
+
+// page column
+.main-content {
+    @include clearfix;
+    margin-top: 20px;
+}
+
+.main-col {
+    @include breakpoint(md) {
+        width: 660px;
+        float: left;
+    }
+}
+
+.sidebar-col {
+    @include breakpoint(md) {
+        width: 320px;
+        float: right;
     }
 }

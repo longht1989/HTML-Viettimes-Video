@@ -2,9 +2,7 @@
    All region in project
    ==================================== */
 
-
-/* zone global style */
-
+// zone global style
 .zone {
     &__header {
         margin-bottom: 10px;
@@ -43,7 +41,7 @@
             padding: 10px;
         }
     }
-    & + .zone {
+    &+.zone {
         margin-top: 15px;
         padding-top: 20px;
         border-top: 1px solid #EEEEEE;
@@ -51,10 +49,25 @@
 }
 
 
-/* ads */
-
+// ads
 .qc {
     @include clearfix();
-    margin-bottom: 20px;
+    margin: 20px 0;
     text-align: center;
+    &--desktop {
+        display: none;
+        @include breakpoint(md) {
+            display: block;
+        }
+    }
+    &--mobile {
+        @include breakpoint(md) {
+            display: none;
+        }
+    }
+    &+.zone {
+        margin-top: 15px;
+        padding-top: 20px;
+        border-top: 1px solid #EEEEEE;
+    }
 }

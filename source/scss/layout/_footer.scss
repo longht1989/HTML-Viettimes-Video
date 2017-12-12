@@ -4,29 +4,25 @@
 
 #site-footer {
     margin-top: 30px;
-    background: #aaa;
+    background: #eee;
     padding: 20px 10px;
     @include clearfix;
-    border-top: 2px solid #999;
+    border-top: 1px solid #ccc;
 }
 
-.footer {
+.site-footer {
+    p {
+        font-size: 14px;
+        line-height: 1.6em;
+        margin-bottom: 5px;
+    }
     &__col {
-        @include breakpoint(sm) {
+        @include breakpoint(md) {
             width: 50%;
             float: left;
             padding: 0 20px;
-        }
-    }
-    &__info {
-        p {
-            color: white;
-            @include font-size(14, 22);
-        }
-        a {
-            color: white;
-            &:hover {
-                color: $brand-warning;
+            &:nth-child(2) {
+                text-align: right;
             }
         }
     }
