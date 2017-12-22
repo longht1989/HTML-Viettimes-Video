@@ -29,6 +29,8 @@
         line-height: 19px;
         font-family: $font-family-serif;
         font-weight: bold;
+        max-height: 57px;
+        overflow: hidden;
         &+.story__meta {
             margin-top: 7px;
         }

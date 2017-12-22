@@ -23,8 +23,31 @@
         }
     }
     .logo {
-        width: 110px;
         float: left;
+        img {
+            height: 30px;
+            width: auto;
+        }
+        a {
+            float: left;
+        }
+        @include breakpoint(md) {
+            width: 110px;
+        }
+        &__sub {
+            font-size: 14px;
+            line-height: 30px;
+            display: inline-block;
+            padding-left: 12px;
+            margin-left: 12px;
+            border-left: 1px solid #eee;
+            .fa {
+                margin-right: 3px;
+            }
+            @include breakpoint(md) {
+                display: none;
+            }
+        }
     }
     .fa-bars {
         cursor: pointer;
@@ -96,6 +119,9 @@
                 background: $brand-primary;
                 color: white;
                 padding-left: 9px;
+            }
+            .fa {
+                margin-right: 3px;
             }
         }
         &:hover {
