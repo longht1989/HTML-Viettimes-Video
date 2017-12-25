@@ -36,6 +36,7 @@
         @include clearfix();
     }
     &--special {
+        margin-bottom: 20px;
         .zone__content {
             background: #F9EFD6;
             padding: 10px;
