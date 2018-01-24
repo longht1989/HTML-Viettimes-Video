@@ -104,6 +104,9 @@
         .story__title {
             font-size: 22px;
             line-height: 29px;
+            @include breakpoint(xs){
+                max-height: initial;
+            }
         }
         .story__meta {
             line-height: 24px;
